@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="To_Do_Firebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -42,12 +42,12 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-Uf-Zxq">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-wA-hga">
                                                 <rect key="frame" x="0.0" y="44" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -70,7 +70,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfz-g5-XCA"/>
-                                                    <segue destination="nSv-qs-7ZR" kind="presentation" identifier="tasksSegue" modalPresentationStyle="fullScreen" id="fiH-Km-psp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gp-Rx-ue2">
@@ -115,6 +114,7 @@
                         <outlet property="emailTextField" destination="RZH-Uf-Zxq" id="hsg-EL-Sch"/>
                         <outlet property="passwordTextField" destination="9D5-wA-hga" id="lg8-QQ-7kF"/>
                         <outlet property="warnLabel" destination="GL3-Ws-1LP" id="jgI-7l-2eX"/>
+                        <segue destination="nSv-qs-7ZR" kind="presentation" identifier="tasksSegue" modalPresentationStyle="fullScreen" id="ijY-E7-3Bs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,6 +160,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="YBd-AX-vcv">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="zf3-oI-sCi">
+                            <connections>
+                                <action selector="signoutTapped:" destination="je4-xW-i8u" id="MvE-vK-CJZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jyg-mr-7du">
                             <connections>
                                 <action selector="addTapped:" destination="je4-xW-i8u" id="Ghs-99-bKx"/>
