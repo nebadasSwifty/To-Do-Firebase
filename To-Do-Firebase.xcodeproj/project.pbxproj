@@ -18,6 +18,8 @@
 		ED60F435282FED1400FC84B2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED60F434282FED1400FC84B2 /* FirebaseAnalytics */; };
 		ED60F437282FED1400FC84B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED60F436282FED1400FC84B2 /* FirebaseAuth */; };
 		ED60F439282FED1400FC84B2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED60F438282FED1400FC84B2 /* FirebaseDatabase */; };
+		ED60F43B282FFB6000FC84B2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60F43A282FFB6000FC84B2 /* Task.swift */; };
+		ED60F43D282FFB6A00FC84B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60F43C282FFB6A00FC84B2 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		ED60F425282FCC3200FC84B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED60F42B282FDF7500FC84B2 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ED60F431282FE63700FC84B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED60F43A282FFB6000FC84B2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		ED60F43C282FFB6A00FC84B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		ED60F42D282FDF8100FC84B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ED60F43A282FFB6000FC84B2 /* Task.swift */,
+				ED60F43C282FFB6A00FC84B2 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 			files = (
 				ED60F41C282FCC2E00FC84B2 /* LoginViewController.swift in Sources */,
 				ED60F42C282FDF7500FC84B2 /* TasksViewController.swift in Sources */,
+				ED60F43D282FFB6A00FC84B2 /* User.swift in Sources */,
+				ED60F43B282FFB6000FC84B2 /* Task.swift in Sources */,
 				ED60F418282FCC2E00FC84B2 /* AppDelegate.swift in Sources */,
 				ED60F41A282FCC2E00FC84B2 /* SceneDelegate.swift in Sources */,
 			);

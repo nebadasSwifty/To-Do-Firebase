@@ -12,9 +12,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference(withPath: "users")
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         warnLabel.alpha = 0
@@ -86,16 +88,10 @@ class LoginViewController: UIViewController {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
-            guard let self = self else { return }
-            if error == nil {
-                if user == nil {
-                    self.displayWarningLabel(withText: "User is not created")
-                }
-            }
+            guard error == nil, user != nil else { return }
+            let userRef = self?.ref.child((user?.user.uid)!)
+            userRef?.setValue(["email" : user!.user.email])
         }
-        
     }
-    
-
 }
 
